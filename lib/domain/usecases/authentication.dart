@@ -6,7 +6,7 @@ abstract class Authentication {
   Future<AccountEntity> auth(AuthenticationParams params);
 }
 
-abstract class AuthenticationParams {
+class AuthenticationParams {
   final String email;
   final String password;
 
