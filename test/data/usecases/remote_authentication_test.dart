@@ -31,7 +31,8 @@ void main() {
       body: {'email': params.email, 'password': params.password},
     ));
   });
-  test('Should InvalidCredentialsError if HttpClient returns 401', () async {
+  test('Should thow InvalidCredentialsError if HttpClient returns 401',
+      () async {
     when(httpClient.request(
             url: anyNamed('url'),
             method: anyNamed('method'),
@@ -42,7 +43,7 @@ void main() {
 
     expect(future, throwsA(DomainError.invalidCredentials));
   });
-  test('Should UnexpectedError if HttpClient returns 400', () async {
+  test('Should throw UnexpectedError if HttpClient returns 400', () async {
     when(httpClient.request(
             url: anyNamed('url'),
             method: anyNamed('method'),
